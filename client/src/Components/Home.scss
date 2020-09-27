@@ -6,15 +6,18 @@
     display:flex;
     justify-content: flex-end;
     align-items: center;
-    height:10vh;
-    padding:0 3vw;
-    button{
-      // margin:0;
-      height:30%;
+    height:5vh;
+    padding:3vh 3vh;
+   
+    .plus-icon{
+      // margin:c
+      display:flex;
+      font-size:2vw;
+      color:rgb(105, 39, 39);
     }
   }
   .products-wrapper {
-    margin-top:5%;
+    margin-top:1%;
     font-size: 4vw;
     display:flex;
     flex-wrap:wrap;

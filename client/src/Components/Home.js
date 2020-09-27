@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Link, Redirect } from "react-router-dom"
 // import products from "../../products"
+import { FaPlusCircle } from 'react-icons/fa'
+
 import "./Home.scss"
 
 const Home = (props) => {
@@ -16,7 +18,8 @@ const Home = (props) => {
 
       <div className="home">
         <div className='add-new-btn'>
-          <button onClick={addNew}>Add New</button>
+        <FaPlusCircle className='plus-icon' onClick={addNew}/>
+          {/* <button >Add New</button> */}
         </div>
         <div className="products-wrapper">
           {products.map((product, index) => {

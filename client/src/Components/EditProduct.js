@@ -11,7 +11,7 @@ const EditProduct = (props) => {
 
   const product = props.products.find((product) => params.id === product._id)
   const {toggle, setToggle} = props
-  console.log(product)
+  console.log(apiUrl)
 
   useEffect(() => {
     console.log('use effect')

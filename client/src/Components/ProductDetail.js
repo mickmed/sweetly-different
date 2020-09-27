@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import { useParams, Redirect } from "react-router-dom"
 // import { getProduct } from "../../../products"
 import "./productDetail.scss"
+import apiUrl from './apiConfig'
+
 
 const ProductDetail = (props) => {
   const [redirect, setRedirect] = useState(false)
@@ -14,7 +16,7 @@ const ProductDetail = (props) => {
     setRedirect(true)
   }
   const deleteItem = async (id) => {
-    await fetch(`http://localhost:3000/api/products/${id}`, {
+    await fetch(`${apiUrl}/products/${id}`, {
       method: "DELETE",
 
       headers: { "Content-type": "application/json; charset=UTF-8" },

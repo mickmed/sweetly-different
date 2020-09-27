@@ -5,6 +5,7 @@ import Home from './Components/Home'
 import ProductDetail from './Components/ProductDetail'
 import EditProduct from './Components/EditProduct'
 import { Route, Switch } from 'react-router-dom'
+import apiUrl from './Components/apiConfig'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -12,7 +13,7 @@ function App() {
   useEffect(() => {
   console.log('ue')
     const getData = async () => {
-      const resp = await fetch("http://localhost:3000/api/products")
+      const resp = await fetch(`${apiUrl}/products`)
       // console.log(await resp.json())
       const data = await resp.json()
       console.log(data)

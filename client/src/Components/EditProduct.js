@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { useParams, Redirect } from "react-router-dom"
 import "./EditProduct.scss"
+import apiUrl from './apiConfig'
+
 
 const EditProduct = (props) => {
   const params = useParams()
@@ -30,7 +32,7 @@ const EditProduct = (props) => {
       }
       console.log(data)
       if (params.id === "*") {
-        await fetch("http://localhost:3000/api/products", {
+        await fetch(`${apiUrl}/api/products`, {
           method: "POST",
           body: JSON.stringify(data),
           headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -40,7 +42,7 @@ const EditProduct = (props) => {
           .catch((err) => console.log(err))
       } else {
         console.log("not *")
-        await fetch(`http://localhost:3000/api/products/${params.id}`, {
+        await fetch(`${apiUrl}/products/${params.id}`, {
           method: "PUT",
           body: JSON.stringify(data),
           headers: { "Content-type": "application/json; charset=UTF-8" },

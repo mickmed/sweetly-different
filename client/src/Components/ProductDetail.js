@@ -30,12 +30,12 @@ const ProductDetail = (props) => {
     <div className="product-detail">
       {redirect && <Redirect to={`/product/edit/${params.id}`} />}
 
-      <div>{name}</div>
-      <div>
+      <div className='name'>{name}</div>
+      <div className='img-desc'>
         <div>{description}</div>
         <img src={imgURL} alt="img" />
       </div>
-      <div>
+      <div className='buttons'>
         <button onClick={editItem}>edit item</button>
         <button onClick={() => deleteItem(_id)}>delete item</button>
       </div>

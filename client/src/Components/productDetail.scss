@@ -1,16 +1,42 @@
 .product-detail {
-  background: rgb(208, 250, 208);
+  background: rgb(193, 209, 193);
   display: flex;
   flex-direction: column;
-  padding:5%;
-  div {
+  padding:5% 8%;
+  width:84%;
+ height:150vh;
+  .name{
+    font-size:2.5vw;
+    font-weight:100;
+    
+  }
+  .img-desc{
     display: flex;
     justify-content:space-between;
+    align-items: center;
     div{
       padding:3%;
+      font-size:2vw;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 100;
+      flex:1;
     }
     img {
       width: 50%;
     }
+   
   }
+ .buttons{
+      display:flex;
+      justify-content:flex-end;
+      padding:3vw 2vw 0 0;
+      button{
+        margin:1vw;
+      }
+    }
+    
+    
+    
+    
+  
 }

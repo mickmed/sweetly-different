@@ -1,13 +1,14 @@
 .home {
   background: rgb(250, 228, 156);
-  // height: 75vh;
+  height: 150vh;
   width:100%;
   .add-new-btn{
     display:flex;
     justify-content: flex-end;
     align-items: center;
     height:5vh;
-    padding:3vh 3vh;
+    padding:5vw 5vw 0 0;
+    // padding:3vh 3vh;
    
     .plus-icon{
       // margin:c

@@ -3,7 +3,7 @@ import { useParams, Redirect } from "react-router-dom"
 // import { getProduct } from "../../../products"
 import "./productDetail.scss"
 import apiUrl from './apiConfig'
-
+console.log(apiUrl)
 
 const ProductDetail = (props) => {
   const [redirect, setRedirect] = useState(false)

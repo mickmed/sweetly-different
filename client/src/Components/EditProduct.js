@@ -32,7 +32,7 @@ const EditProduct = (props) => {
       }
       console.log(data)
       if (params.id === "*") {
-        await fetch(`${apiUrl}/api/products`, {
+        await fetch(`${apiUrl}/products`, {
           method: "POST",
           body: JSON.stringify(data),
           headers: { "Content-type": "application/json; charset=UTF-8" },

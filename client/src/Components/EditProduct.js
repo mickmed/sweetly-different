@@ -39,6 +39,7 @@ const EditProduct = (props) => {
         })
           .then((response) => response.json())
           .then((json) => console.log(json))
+          .then(()=>setToggle(!toggle))
           .catch((err) => console.log(err))
       } else {
         console.log("not *")
@@ -49,12 +50,14 @@ const EditProduct = (props) => {
         })
           .then((response) => response.json())
           .then((json) => console.log(json))
+          .then(()=>setToggle(!toggle))
+
           .catch((err) => console.log(err))
       }
     }
     getData()
     setRedirect(true)
-    setToggle(!toggle)
+    // setToggle(!toggle)
 
   }
 

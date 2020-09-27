@@ -26,7 +26,7 @@ const Home = (props) => {
             return (
               <Link to={`/product/${product._id}`} key={index}>
                 <div>
-                  {/* <div className="product">{product.name}</div> */}
+                  <div className="product">{product.name}</div>
                   <img className="product-img" src={product.imgURL} alt="img" />
                 </div>
               </Link>

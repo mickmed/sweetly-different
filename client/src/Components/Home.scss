@@ -23,14 +23,20 @@
     display:flex;
     flex-wrap:wrap;
     justify-content: center;
-
+a{
+  text-decoration:none;
+}
     div {
       color:green;
       padding:2vw;
+      text-emphasis: none;
       .product-img {
         width: 25vw;
       }
       .product {
+        font-size:1.5vw;
+        padding:0 0 1vh 0;
+        text-decoration: none;
       }
     }
   }

@@ -8,7 +8,9 @@ import { Route, Switch } from 'react-router-dom'
 
 function App() {
   const [products, setProducts] = useState([])
+  const [toggle, setToggle] = useState(false)
   useEffect(() => {
+  console.log('ue')
     const getData = async () => {
       const resp = await fetch("http://localhost:3000/api/products")
       // console.log(await resp.json())
@@ -18,23 +20,23 @@ function App() {
       
     }
     getData()
-  }, [])
+  }, [toggle])
  
   
   return (
     <div className="App">
      
   
-      <Header/>
+      <Header toggle={toggle} setToggle={setToggle}/>
     
 
       <Switch>
         <Route exact path='/'>
-          <Home products={products}/>
+          <Home products={products} />
         </Route> 
       
         <Route exact path='/product/edit/:id'>
-          <EditProduct products={products}/>
+          <EditProduct products={products} toggle={toggle} setToggle={setToggle}/>
         </Route>
           <Route path='/product/:id'>
           <ProductDetail products={products}/>

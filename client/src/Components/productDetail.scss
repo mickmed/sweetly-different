@@ -1,0 +1,16 @@
+.product-detail {
+  background: orange;
+  display: flex;
+  flex-direction: column;
+  padding:5%;
+  div {
+    display: flex;
+    justify-content:space-between;
+    div{
+      padding:3%;
+    }
+    img {
+      width: 50%;
+    }
+  }
+}

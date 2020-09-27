@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Redirect } from "react-router-dom"
 import "./EditProduct.scss"
 
 const EditProduct = (props) => {
   const params = useParams()
+  const [redirect, setRedirect] = useState(false)
+  const [state, setState] = useState({ name: '', description:'', imgURL: ''})
 
   const product = props.products.find((product) => params.id === product._id)
+  const {toggle, setToggle} = props
+  console.log(product)
 
-  console.log(params)
-  console.log(props, product)
-  const [value, setValue] = useState({ name: "", value: "" })
-  const [state, setState] = useState({ name: "", description: "" })
-
-  useEffect(() => {}, [])
+  useEffect(() => {
+    console.log('use effect')
+    setState({ name: product && product.name, description: product && product.description, imgURL: product && product.imgURL})
+  }, [product])
   const handleChange = (e) => {
     console.log(e.target.name, e.target.value)
     setState({ ...state, [e.target.name]: e.target.value })
@@ -21,29 +23,26 @@ const EditProduct = (props) => {
     e.preventDefault()
 
     const getData = async () => {
-      // const resp = await fetch("http://localhost:3000")
-      // // console.log(await resp.json())
-      // const data = await resp.json()
-      // console.log(data)
-      // setProducts(data)
-      let _data = {
+      let data = {
         name: state.name,
         description: state.description,
+        imgURL: state.imgURL
       }
+      console.log(data)
       if (params.id === "*") {
         await fetch("http://localhost:3000/api/products", {
           method: "POST",
-          body: JSON.stringify(_data),
+          body: JSON.stringify(data),
           headers: { "Content-type": "application/json; charset=UTF-8" },
         })
           .then((response) => response.json())
           .then((json) => console.log(json))
           .catch((err) => console.log(err))
       } else {
-        console.log('not *')
+        console.log("not *")
         await fetch(`http://localhost:3000/api/products/${params.id}`, {
           method: "PUT",
-          body: JSON.stringify(_data),
+          body: JSON.stringify(data),
           headers: { "Content-type": "application/json; charset=UTF-8" },
         })
           .then((response) => response.json())
@@ -52,25 +51,40 @@ const EditProduct = (props) => {
       }
     }
     getData()
+    setRedirect(true)
+    setToggle(!toggle)
+
   }
 
   return (
-    <form className="edit-form" onSubmit={handleSubmit}>
-      <div>punk</div>
-      <input
-        name="name"
-        type="text"
-        value={(state.name || product && product.name)}
-        onChange={handleChange}
-      />
-      <input
-        name="description"
-        type="text"
-        value={(state.description || product && product.description) }
-        onChange={handleChange}
-      />
-      <button>add item</button>
-    </form>
+    <div className="edit-product">
+      {redirect && <Redirect to='/'/>}
+      <form className="edit-form" onSubmit={handleSubmit}>
+       
+        <input
+          name="name"
+          type="text"
+          value={state.name}
+          onChange={handleChange}
+          placeholder='name'
+        />
+        <textarea
+          name="description"
+          type="text"
+          value={state.description}
+          onChange={handleChange}
+          placeholder='description'
+        />
+        <input
+          name="imgURL"
+          type="text"
+          value={state.imgURL}
+          onChange={handleChange}
+          placeholder='imgURL'
+        />
+        <button>add item</button>
+      </form>
+    </div>
   )
 }
 

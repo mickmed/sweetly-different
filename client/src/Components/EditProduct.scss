@@ -1,3 +1,32 @@
-.edit-form{
-  width:40%;
+.edit-product {
+  padding:10%;
+  background:lightyellow;
+  .edit-form {
+    width: 100%;
+    // background:orange;
+    display:flex;
+    flex-direction:column;
+    height:50vh;
+    
+    input, textarea, button{
+      background:#fdfdfd;
+      height:100%;
+      border:1px solid grey;
+      margin:1%;
+      border-radius:5px;
+      font-size:2vw;
+      padding:1%;
+      flex:1;
+    }
+    textarea{
+      flex:5;
+    }
+    button{
+      width:20%;
+      // height:50%;
+      margin:3% 0 0 79%;
+      flex:1;
+
+    }
+  }
 }

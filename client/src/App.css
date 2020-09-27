@@ -11,15 +11,3 @@
 
 }
 
-header{
-font-size:6vw;
-  font-family:'Tomatoes';
-  display:flex;
-  justify-content:center;
-  background:pink;
-  color:rgb(105, 39, 39);
-  height:75vh;
-  justify-content: center;
-  align-items:center;
-  
-}

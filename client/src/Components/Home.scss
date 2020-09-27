@@ -2,10 +2,19 @@
   background: rgb(250, 228, 156);
   // height: 75vh;
   width:100%;
-  .title {
-    margin: 0;
+  .add-new-btn{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    height:10vh;
+    padding:0 3vw;
+    button{
+      // margin:0;
+      height:30%;
+    }
   }
   .products-wrapper {
+    margin-top:5%;
     font-size: 4vw;
     display:flex;
     flex-wrap:wrap;
@@ -15,7 +24,7 @@
       color:green;
       padding:2vw;
       .product-img {
-        width: 20vw;
+        width: 25vw;
       }
       .product {
       }

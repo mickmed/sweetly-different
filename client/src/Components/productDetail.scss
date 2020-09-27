@@ -2,41 +2,46 @@
   background: rgb(193, 209, 193);
   display: flex;
   flex-direction: column;
-  padding:5% 8%;
-  width:84%;
- height:150vh;
-  .name{
-    font-size:2.5vw;
-    font-weight:100;
-    
+  padding: 5% 8%;
+  width: 84%;
+  height: 150vh;
+  .name {
+    font-size: 2.5vw;
+    font-weight: 100;
   }
-  .img-desc{
+  .img-desc {
     display: flex;
-    justify-content:space-between;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    div{
-      padding:3%;
-      font-size:2vw;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 100;
-      flex:1;
+    div {
+      padding: 3%;
+      font-size: 3vw;
+      font-family: "Raleway", sans-serif;
+      font-weight: 300;
+      flex: 1;
     }
     img {
       width: 50%;
     }
-   
   }
- .buttons{
-      display:flex;
-      justify-content:flex-end;
-      padding:3vw 2vw 0 0;
-      button{
-        margin:1vw;
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 3vw 2vw 0 0;
+    button {
+      margin: 1vw;
+    }
+  }
+}
+@media only screen and (min-width: 600px) {
+  .product-detail{
+    .img-desc {
+      font-size: 3vw;
+      flex-direction: row;
+      div{
+        font-size:2.5vw;
       }
     }
-    
-    
-    
-    
-  
+  }
 }

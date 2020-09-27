@@ -13,7 +13,7 @@
     .plus-icon{
       // margin:c
       display:flex;
-      font-size:2vw;
+      font-size:4vw;
       color:rgb(105, 39, 39);
     }
   }
@@ -39,5 +39,16 @@ a{
         text-decoration: none;
       }
     }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .home{
+    .add-new-btn{
+      .plus-icon {
+      font-size: 3vw;
+    }
+    }
+    
   }
 }
